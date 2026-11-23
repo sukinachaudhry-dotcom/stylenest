@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1647659006826387');
+              fbq('init', '2259860921594253');
               fbq('track','PageView');
             `,
           }}

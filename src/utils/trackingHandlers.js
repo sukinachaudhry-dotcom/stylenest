@@ -9,14 +9,14 @@
 // ==========================================
 
 export function trackPageView(url) {
-  fbq('track','PageView');
+  // fbq('track','PageView');
   if (typeof window !== 'undefined') {
     console.debug('[Event Ready] PageView:', { url });
   }
 }
 
 export function trackViewContent(product) {
-  fbq('track', 'ViewContent');
+  // fbq('track', 'ViewContent');
   console.debug('[Event Ready] ViewContent:', {
     content_ids: [product.id],
     content_name: product.name,
@@ -28,7 +28,7 @@ export function trackViewContent(product) {
 }
 
 export function trackSearch(searchQuery, resultsCount) {
-  fbq('track', 'Search');
+  // fbq('track', 'Search');
   console.debug('[Event Ready] Search:', {
     search_string: searchQuery,
     results_count: resultsCount,
@@ -36,7 +36,7 @@ export function trackSearch(searchQuery, resultsCount) {
 }
 
 export function trackAddToCart(product, quantity = 1, selectedSize = '', selectedColor = '') {
-  fbq('track', 'AddToCart');
+  // fbq('track', 'AddToCart');
   console.debug('[Event Ready] AddToCart:', {
     content_ids: [product.id],
     content_name: product.name,
@@ -50,7 +50,7 @@ export function trackAddToCart(product, quantity = 1, selectedSize = '', selecte
 }
 
 export function trackInitiateCheckout(cartItems, totalValue) {
-  fbq('track', 'InitiateCheckout');
+  // fbq('track', 'InitiateCheckout');
   console.debug('[Event Ready] InitiateCheckout:', {
     content_ids: cartItems.map((item) => item.id),
     num_items: cartItems.reduce((sum, item) => sum + item.quantity, 0),
@@ -69,7 +69,7 @@ export function trackAddPaymentInfo(paymentMethod, totalValue) {
 }
 
 export function trackPurchase(order) {
-  fbq('track', 'Purchase');
+  // fbq('track', 'Purchase');
   console.debug('[Event Ready] Purchase:', {
     order_id: order.orderId,
     content_ids: order.items.map((item) => item.id),
@@ -80,12 +80,9 @@ export function trackPurchase(order) {
   });
 }
 
-// ==========================================
-// CUSTOM EVENTS
-// ==========================================
 
 export function trackAddToWishlist(product) {
-  fbq('track','AddToWishlist');
+  // fbq('track','AddToWishlist');
   console.debug('[Event Ready] AddToWishlist:', {
     content_ids: [product.id],
     content_name: product.name,
@@ -94,6 +91,9 @@ export function trackAddToWishlist(product) {
     currency: 'USD',
   });
 }
+// ==========================================
+// CUSTOM EVENTS
+// ==========================================
 
 export function trackRemoveFromCart(item) {
   fbq('trackCustom', 'RemoveFromCart');
