@@ -151,7 +151,7 @@ export default function CheckoutPage() {
               type="text"
               value={formData.address}
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-              placeholder="72 Evergreen Terrace, Apt 4B"
+              placeholder="742 Evergreen Terrace, Apt 4B"
             />
             {errors.address && <span className="error-text">{errors.address}</span>}
           </div>
