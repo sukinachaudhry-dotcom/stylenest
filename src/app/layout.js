@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Script
+        {/* <Script
           id="meta-pixel"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -69,7 +69,24 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=2259860921594253&ev=PageView&noscript=1"
             alt=""
           />
-        </noscript>
+        </noscript> */}
+
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-WSCCTXJ7"
+        />
+        <Script
+          id="google-tag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            `,
+          }}
+        />
       </head>
       <body>
         <StoreProvider>
